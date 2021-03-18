@@ -3,7 +3,8 @@
 <meta http-equiv="Content-Security-Policy" content="frame-src https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670};">
 </head>
 <body>
-     var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+<script>
+          var is_safari = navigator.userAgent.indexOf("Safari") > -1;
     // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
     var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
     if ((is_chrome) && (is_safari)) {is_safari = false;}  
@@ -15,6 +16,8 @@
             window.location.replace("https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}");
         }
     }
+</script>
+     <iframe id="advanced_iframe_4" name="advanced_iframe_4" src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="200" frameborder="0" allowtransparency="true" style=";width:50%;height:200px;"></iframe>
 </body>
 </html>
 
