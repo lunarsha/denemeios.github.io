@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Primary Site Fixed</title>
-</head>
 <body>
-
 <script>
-    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-    if ((is_chrome) && (is_safari)) {is_safari = false;}  
-    if (is_safari) {
-        if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
-            document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
-            [advanced_iframe width="50%" height="200" src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" safari_fix_url="all:messagehttps://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}"]
-            window.location.replace("https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}");
-        }
-    }
+$( document ).ready(function() {
+     d = new Date();
+    document.cookie = "time=" + d + "; expires=" + "May 31 2036 23:59:59 GMT+09:00" + "; path=/";
+    var x = document.cookie;
+    document.getElementById("doesitwork").innerHTML = x;
+});    
 </script>
 <iframe src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="400" frameborder="2"></iframe>
 </body>
