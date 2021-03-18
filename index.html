@@ -16,7 +16,20 @@
             // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
             document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
             window.location.replace("https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}");
+            
+              document.cookie = 'safari_cookie_fix=fixed; path=/';
+  if (window.location.href.indexOf('verbose') > -1) { // you should remove or comment this line
+    alert('safari fix has been applied'); // you should remove or comment this line
+    setTimeout(window.location.replace(document.referrer), 2000); // you should remove or comment this line
+  } else { // you should remove or comment this line
+      window.location.replace(document.referrer) //>>>>>>> leave this line ONLY <<<<<<<<
+  } // you should remove or comment this line
         }
     }
 </script>
 <iframe src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="400" frameborder="2"></iframe>
+
+    
+
+
+
