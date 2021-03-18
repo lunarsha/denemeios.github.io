@@ -4,8 +4,9 @@
     <title>Main website A</title>
 </head>
 <body>
-
+});
 <script>
+    console.log( "ready!" );
     document.cookie = 'safari_cookie_fix=fixed; path=/';
     window.location.replace(document.referrer);
     var is_safari = navigator.userAgent.indexOf("Safari") > -1;
