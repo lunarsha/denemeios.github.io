@@ -1,23 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Security-Policy" content="frame-src https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670};">
+    <title>Primary Site Fixed</title>
 </head>
 <body>
-<script>
-use framework "WebKit"
+<script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
 
-on set_cookies_for_URL(URL)
-    set web_view to current application's WebView's alloc()'s initWithFrame:(current application's NSMakeRect(0, 0, 500, 500)) frameName:"tempFrame" groupName:"tempGroup"
-    set web_view's mainFrameURL to URL
-    #delay to avoid release
-    repeat while ((web_view's isLoading) as boolean) is true
-        delay 1
-    end repeat
-    return "done"
-end set_cookies_for_URL
-        }
-    }
+<script>
+$.cookie('MyCookie', 'tayfun99', { expires: 24 });
 </script>
-     <iframe id="advanced_iframe_4" name="advanced_iframe_4" src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="200" frameborder="0" allowtransparency="true" style=";width:50%;height:200px;"></iframe>
+<iframe src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="400" frameborder="2"></iframe>
+
 </body>
 </html>
