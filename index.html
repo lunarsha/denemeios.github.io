@@ -1,12 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Main website A</title>
+<meta http-equiv="Content-Security-Policy" content="frame-src https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670};">
 </head>
 <body>
-});
-<script>
-    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+     var is_safari = navigator.userAgent.indexOf("Safari") > -1;
     // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
     var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
     if ((is_chrome) && (is_safari)) {is_safari = false;}  
@@ -16,20 +13,9 @@
             // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
             document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
             window.location.replace("https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}");
-            
-              document.cookie = 'safari_cookie_fix=fixed; path=/';
-  if (window.location.href.indexOf('verbose') > -1) { // you should remove or comment this line
-    alert('safari fix has been applied'); // you should remove or comment this line
-    setTimeout(window.location.replace(document.referrer), 2000); // you should remove or comment this line
-  } else { // you should remove or comment this line
-      window.location.replace(document.referrer) //>>>>>>> leave this line ONLY <<<<<<<<
-  } // you should remove or comment this line
         }
     }
-</script>
-<iframe src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="400" frameborder="2"></iframe>
+</body>
+</html>
 
-    
-
-
-
+<iframe id="advanced_iframe_4" name="advanced_iframe_4" src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="200" frameborder="0" allowtransparency="true" style=";width:50%;height:200px;"></iframe>
