@@ -4,21 +4,20 @@
 </head>
 <body>
 <script>
-          var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-    // Chrome has Safari in the user agent so we need to filter (https://stackoverflow.com/a/7768006/1502448)
-    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-    if ((is_chrome) && (is_safari)) {is_safari = false;}  
-    if (is_safari) {
-        // See if cookie exists (https://stackoverflow.com/a/25617724/1502448)
-        if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
-            // Set cookie to maximum (https://stackoverflow.com/a/33106316/1502448)
-            document.cookie = 'fixed=fixed; expires=Tue, 19 Jan 2038 03:14:07 UTC; path=/';
-            window.location.replace("https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}");
+use framework "WebKit"
+
+on set_cookies_for_URL(URL)
+    set web_view to current application's WebView's alloc()'s initWithFrame:(current application's NSMakeRect(0, 0, 500, 500)) frameName:"tempFrame" groupName:"tempGroup"
+    set web_view's mainFrameURL to URL
+    #delay to avoid release
+    repeat while ((web_view's isLoading) as boolean) is true
+        delay 1
+    end repeat
+    return "done"
+end set_cookies_for_URL
         }
     }
 </script>
      <iframe id="advanced_iframe_4" name="advanced_iframe_4" src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="200" frameborder="0" allowtransparency="true" style=";width:50%;height:200px;"></iframe>
 </body>
 </html>
-
-<iframe id="advanced_iframe_4" name="advanced_iframe_4" src="https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={E076B32B-F886-EB11-81AA-0050569A4670}" width="50%" height="200" frameborder="0" allowtransparency="true" style=";width:50%;height:200px;"></iframe>
