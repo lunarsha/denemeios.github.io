@@ -7,11 +7,14 @@
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>$( document ).ready(function() {
                 function get_frame() {
-                    var ajaxurl = "https://marketingautomationcrm.azurewebsites.net/webform.aspx?webformid={16CF95D5-CACA-E811-8146-000C295E18D9}";
+                    var ajaxurl = "https://marketingautomationcrm.azurewebsites.net/webform.aspx";
                     return new Promise((resolve, reject) => {
                         $.ajax({
                             url: ajaxurl
                             , type: 'GET'
+                            , data: {
+                                'webformid': "{16CF95D5-CACA-E811-8146-000C295E18D9}"
+                            }
                             , cache: false
                             , processData: false
                             , success: function (data) {
