@@ -1,44 +1,1027 @@
-< !DOCTYPE html >
-    <html>
-        <head>
-            <title>Test</title>
-        </head>
-        <body>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>$( document ).ready(function() {
-                function get_frame() {
-                    var ajaxurl = "https://marketingautomationcrm.azurewebsites.net/webform.aspx";
-                    return new Promise((resolve, reject) => {
-                        $.ajax({
-                            url: ajaxurl
-                            , type: 'GET'
-                            , data: {
-                                'webformid': "{16CF95D5-CACA-E811-8146-000C295E18D9}"
-                            }
-                            , cache: false
-                            , processData: false
-                            , success: function (data) {
-                                resolve(data)
-                            }
-                            , error: function (error) {
-                                reject(error)
-                            }
-                            ,
-                        })
-                    })
-                }
-
-        get_frame()
-                    .then((data) => {
-                console.log(data);
-                    })
-                    .catch((error) => {
-                console.log(error)
-            });
-
-});</script>
 
 
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Web Form
+</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <link href="BotDetectCaptcha.ashx?get=layout-stylesheet" rel="stylesheet" type="text/css" /><link href="css/bootstrap4.5/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap4.5/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/myjs.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" /><link href="css/sem_webform.css" rel="stylesheet" /></head>
+<form method="post" action="./webform.aspx?webformid=%7b16CF95D5-CACA-E811-8146-000C295E18D9%7d&amp;AspxAutoDetectCookieSupport=1" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="dYhyepcGgUHo4eukRioRK6VJZPDLTC/E++J5274ryXn+xeqtTXJ8oAcZ4jontDHtA3uA4nHjtYnH4E+qTWKL+xOj0tP3I7AP/xpZDprnrkg3x7Ixcu6BwhcTjXxWjbw89XSwvbrzdEtZa9AdL2ig3kK11xJ1oUD7582Tvw4LJsUwzEBj0PeoCONhus1kaXZwqnsM76ZI5q0GmVSZgLy9wA==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7F653548" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+    <div style="width: 100%; margin: 0 auto;">
+        <!--dialog box-->
+        <div id="white-background">
+        </div>
+        <div id="dlgbox">
+            <div id="dlg-header">Kayıt Durumu</div>
+            <div id="dlg-body">Kayıt Başarıyla Alındı </div>
+            <div id="dlg-footer">
+                <button onclick="dlgLogin()">OK </button>
+            </div>
+        </div>
+        <table id="Table1" style="width: 70%; margin: 0 auto;">
+	<tr>
+		<td><span class="uk-form-label">Ad  *:</span></td>
+	</tr><tr>
+		<td><input name="txtName" type="text" id="txtName" class="uk-input" autocomplete="off" /></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">Soyad  *:</span></td>
+	</tr><tr>
+		<td><input name="txtSurname" type="text" id="txtSurname" class="uk-input" autocomplete="off" /></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">Firma  *:</span></td>
+	</tr><tr>
+		<td><input name="txtCompany" type="text" id="txtCompany" class="uk-input" autocomplete="off" /></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">Ünvan  *:</span></td>
+	</tr><tr>
+		<td><input name="txtTitle" type="text" id="txtTitle" class="uk-input" autocomplete="off" /></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">E-Posta  *:</span></td>
+	</tr><tr>
+		<td><input name="txtEmail" type="email" id="txtEmail" class="uk-input" autocomplete="off" /></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">Telefon  *:</span></td>
+	</tr><tr>
+		<td><input name="txtPhone" type="tel" id="txtPhone" class="uk-input" autocomplete="off" /></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">Adres  *:</span></td>
+	</tr><tr>
+		<td><textarea name="txtAdress" rows="6" cols="20" id="txtAdress" class="uk-textarea">
+</textarea></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">İl  *:</span></td>
+	</tr><tr>
+		<td><select name="drlistProvince" id="drlistProvince" class="uk-select">
+			<option selected="selected" value="0">Se&#231;iniz</option>
+			<option value="f2675068-07ee-e211-9fad-000c29a56e4a">ADANA</option>
+			<option value="f4675068-07ee-e211-9fad-000c29a56e4a">ADIYAMAN</option>
+			<option value="f6675068-07ee-e211-9fad-000c29a56e4a">AFYONKARAHISAR</option>
+			<option value="f8675068-07ee-e211-9fad-000c29a56e4a">AGRI</option>
+			<option value="78685068-07ee-e211-9fad-000c29a56e4a">AKSARAY</option>
+			<option value="11747293-8698-e511-810d-0050568453c9">ALGER</option>
+			<option value="fa675068-07ee-e211-9fad-000c29a56e4a">AMASYA</option>
+			<option value="fc675068-07ee-e211-9fad-000c29a56e4a">ANKARA</option>
+			<option value="fe675068-07ee-e211-9fad-000c29a56e4a">ANTALYA</option>
+			<option value="86685068-07ee-e211-9fad-000c29a56e4a">ARDAHAN</option>
+			<option value="00685068-07ee-e211-9fad-000c29a56e4a">ARTVIN</option>
+			<option value="074a7234-bc4b-e511-b05a-000c29a56e4a">ASHGABAT</option>
+			<option value="02685068-07ee-e211-9fad-000c29a56e4a">AYDIN</option>
+			<option value="f271d8fa-c459-e311-ac2c-000c29a56e4a">BAKU</option>
+			<option value="04685068-07ee-e211-9fad-000c29a56e4a">BALIKESIR</option>
+			<option value="84685068-07ee-e211-9fad-000c29a56e4a">BARTIN</option>
+			<option value="80685068-07ee-e211-9fad-000c29a56e4a">BATMAN</option>
+			<option value="7a685068-07ee-e211-9fad-000c29a56e4a">BAYBURT</option>
+			<option value="06685068-07ee-e211-9fad-000c29a56e4a">BILECIK</option>
+			<option value="08685068-07ee-e211-9fad-000c29a56e4a">BINGOL</option>
+			<option value="0a685068-07ee-e211-9fad-000c29a56e4a">BITLIS</option>
+			<option value="0c685068-07ee-e211-9fad-000c29a56e4a">BOLU</option>
+			<option value="0e685068-07ee-e211-9fad-000c29a56e4a">BURDUR</option>
+			<option value="10685068-07ee-e211-9fad-000c29a56e4a">BURSA</option>
+			<option value="7cb7da30-1e8a-e611-813a-0050568453c9">CALİFORNİA</option>
+			<option value="12685068-07ee-e211-9fad-000c29a56e4a">CANAKKALE</option>
+			<option value="14685068-07ee-e211-9fad-000c29a56e4a">CANKIRI</option>
+			<option value="37747293-8698-e511-810d-0050568453c9">CARSON</option>
+			<option value="16685068-07ee-e211-9fad-000c29a56e4a">CORUM</option>
+			<option value="18685068-07ee-e211-9fad-000c29a56e4a">DENIZLI</option>
+			<option value="1a685068-07ee-e211-9fad-000c29a56e4a">DIYARBAKIR</option>
+			<option value="92685068-07ee-e211-9fad-000c29a56e4a">DUZCE</option>
+			<option value="1c685068-07ee-e211-9fad-000c29a56e4a">EDIRNE</option>
+			<option value="1e685068-07ee-e211-9fad-000c29a56e4a">ELAZIG</option>
+			<option value="20685068-07ee-e211-9fad-000c29a56e4a">ERZINCAN</option>
+			<option value="22685068-07ee-e211-9fad-000c29a56e4a">ERZURUM</option>
+			<option value="24685068-07ee-e211-9fad-000c29a56e4a">ESKISEHIR</option>
+			<option value="26685068-07ee-e211-9fad-000c29a56e4a">GAZIANTEP</option>
+			<option value="28685068-07ee-e211-9fad-000c29a56e4a">GIRESUN</option>
+			<option value="f2cf25af-538c-e511-8210-000c29a56e4a">GIRNE</option>
+			<option value="2a685068-07ee-e211-9fad-000c29a56e4a">GUMUSHANE</option>
+			<option value="2c685068-07ee-e211-9fad-000c29a56e4a">HAKKARI</option>
+			<option value="9579b8c6-4687-e711-81b6-0050568453c9">HANNOVER</option>
+			<option value="2e685068-07ee-e211-9fad-000c29a56e4a">HATAY</option>
+			<option value="88685068-07ee-e211-9fad-000c29a56e4a">IGDIR</option>
+			<option value="30685068-07ee-e211-9fad-000c29a56e4a">ISPARTA</option>
+			<option value="34685068-07ee-e211-9fad-000c29a56e4a">ISTANBUL</option>
+			<option value="e73821c4-abe1-e311-b0b7-000c29a56e4a">ITALYA</option>
+			<option value="36685068-07ee-e211-9fad-000c29a56e4a">IZMIR</option>
+			<option value="4c685068-07ee-e211-9fad-000c29a56e4a">K.MARAS</option>
+			<option value="bc9a20e5-bdc1-e511-812a-0050568453c9">KAHRAMANMARAS</option>
+			<option value="8c685068-07ee-e211-9fad-000c29a56e4a">KARABUK</option>
+			<option value="7c685068-07ee-e211-9fad-000c29a56e4a">KARAMAN</option>
+			<option value="38685068-07ee-e211-9fad-000c29a56e4a">KARS</option>
+			<option value="3a685068-07ee-e211-9fad-000c29a56e4a">KASTAMONU</option>
+			<option value="3c685068-07ee-e211-9fad-000c29a56e4a">KAYSERI</option>
+			<option value="b69c7eb3-a91b-e311-86ba-000c29a56e4a">KIBRIS</option>
+			<option value="8e685068-07ee-e211-9fad-000c29a56e4a">KILIS</option>
+			<option value="7e685068-07ee-e211-9fad-000c29a56e4a">KIRIKKALE</option>
+			<option value="3e685068-07ee-e211-9fad-000c29a56e4a">KIRKLARELI</option>
+			<option value="40685068-07ee-e211-9fad-000c29a56e4a">KIRSEHIR</option>
+			<option value="42685068-07ee-e211-9fad-000c29a56e4a">KOCAELI</option>
+			<option value="44685068-07ee-e211-9fad-000c29a56e4a">KONYA</option>
+			<option value="46685068-07ee-e211-9fad-000c29a56e4a">KUTAHYA</option>
+			<option value="48685068-07ee-e211-9fad-000c29a56e4a">MALATYA</option>
+			<option value="4a685068-07ee-e211-9fad-000c29a56e4a">MANISA</option>
+			<option value="84747293-8698-e511-810d-0050568453c9">MARCY L&#39;ETOILE</option>
+			<option value="4e685068-07ee-e211-9fad-000c29a56e4a">MARDIN</option>
+			<option value="32685068-07ee-e211-9fad-000c29a56e4a">MERSIN</option>
+			<option value="8a747293-8698-e511-810d-0050568453c9">MILANO</option>
+			<option value="50685068-07ee-e211-9fad-000c29a56e4a">MUGLA</option>
+			<option value="52685068-07ee-e211-9fad-000c29a56e4a">MUS</option>
+			<option value="54685068-07ee-e211-9fad-000c29a56e4a">NEVSEHIR</option>
+			<option value="56685068-07ee-e211-9fad-000c29a56e4a">NIGDE</option>
+			<option value="501b5e2b-2fc9-e711-81c2-0050568453c9">ONTARIO</option>
+			<option value="58685068-07ee-e211-9fad-000c29a56e4a">ORDU</option>
+			<option value="90685068-07ee-e211-9fad-000c29a56e4a">OSMANIYE</option>
+			<option value="c2bebc1c-c559-e311-ac2c-000c29a56e4a">QUBA</option>
+			<option value="5a685068-07ee-e211-9fad-000c29a56e4a">RIZE</option>
+			<option value="5c685068-07ee-e211-9fad-000c29a56e4a">SAKARYA</option>
+			<option value="5e685068-07ee-e211-9fad-000c29a56e4a">SAMSUN</option>
+			<option value="6e685068-07ee-e211-9fad-000c29a56e4a">SANLIURFA</option>
+			<option value="60685068-07ee-e211-9fad-000c29a56e4a">SIIRT</option>
+			<option value="62685068-07ee-e211-9fad-000c29a56e4a">SINOP</option>
+			<option value="82685068-07ee-e211-9fad-000c29a56e4a">SIRNAK</option>
+			<option value="64685068-07ee-e211-9fad-000c29a56e4a">SIVAS</option>
+			<option value="66685068-07ee-e211-9fad-000c29a56e4a">TEKIRDAG</option>
+			<option value="68685068-07ee-e211-9fad-000c29a56e4a">TOKAT</option>
+			<option value="6a685068-07ee-e211-9fad-000c29a56e4a">TRABZON</option>
+			<option value="b1747293-8698-e511-810d-0050568453c9">TREBIC</option>
+			<option value="6c685068-07ee-e211-9fad-000c29a56e4a">TUNCELI</option>
+			<option value="70685068-07ee-e211-9fad-000c29a56e4a">USAK</option>
+			<option value="72685068-07ee-e211-9fad-000c29a56e4a">VAN</option>
+			<option value="8a685068-07ee-e211-9fad-000c29a56e4a">YALOVA</option>
+			<option value="74685068-07ee-e211-9fad-000c29a56e4a">YOZGAT</option>
+			<option value="d69a0eba-a91b-e311-86ba-000c29a56e4a">YURT DISI</option>
+			<option value="02a7129d-d4d2-e811-8148-000c295e18d9">YURTDIŞI</option>
+			<option value="b16aba79-1d8a-e611-813a-0050568453c9">ZAGREB</option>
+			<option value="76685068-07ee-e211-9fad-000c29a56e4a">ZONGULDAK</option>
+
+		</select></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td><span class="uk-form-label">Yorum:</span></td>
+	</tr><tr>
+		<td><textarea name="txtArea" rows="6" cols="20" id="txtArea" class="uk-textarea">
+</textarea></td>
+	</tr><tr>
+		<td></td>
+	</tr><tr>
+		<td>
+
+
+  <div class="BDC_CaptchaDiv " id="c_webform_wfc_CaptchaDiv" style="width: 280px !important; height: 50px !important; "><!--
+ --><div class="BDC_CaptchaImageDiv" id="c_webform_wfc_CaptchaImageDiv" style="width: 250px !important; height: 50px !important;"><!--
+   --><a href="//captcha.org/captcha.html?asp.net" title="BotDetect CAPTCHA ASP.NET Form Validation" onclick="c_webform_wfc.OnHelpLinkClick(); return c_webform_wfc.FollowHelpLink;"><img class="BDC_CaptchaImage" id="c_webform_wfc_CaptchaImage" src="/BotDetectCaptcha.ashx?get=image&amp;c=c_webform_wfc&amp;t=35646336fbcb4f7ea61438c414cd996d" alt="Retype the CAPTCHA code from the image" /></a><!--
+ --></div><!--
+ --><div class="BDC_CaptchaIconsDiv" id="c_webform_wfc_CaptchaIconsDiv" style="width: 24px !important;"><!--
+   --><a class="BDC_ReloadLink" id="c_webform_wfc_ReloadLink" href="#" onclick="c_webform_wfc.ReloadImage(); this.blur(); return false;" title="Change the CAPTCHA code"><img class="BDC_ReloadIcon" id="c_webform_wfc_ReloadIcon" src="/BotDetectCaptcha.ashx?get=reload-icon" alt="Change the CAPTCHA code" /></a><!--
+   --><a class="BDC_SoundLink" id="c_webform_wfc_SoundLink" href="/BotDetectCaptcha.ashx?get=sound&amp;c=c_webform_wfc&amp;t=35646336fbcb4f7ea61438c414cd996d&amp;s=sBnZCDT1ItVvo2B%2fassAAfFCSUqogmHzAPa2TBiqBrvnY9XJzWk0luKPyGK%2buJ2fbxPt6F%2fQl5Z02XLA9esduw%3d%3d" onclick="c_webform_wfc.PlaySound(); this.blur(); return false;" title="Speak the CAPTCHA code" rel="nofollow"><img class="BDC_SoundIcon" id="c_webform_wfc_SoundIcon" src="/BotDetectCaptcha.ashx?get=sound-icon" alt="Speak the CAPTCHA code" /></a><!--
+   --><div class="BDC_Placeholder" id="c_webform_wfc_AudioPlaceholder">&nbsp;</div><!--
+ --></div>
+    <script src="/BotDetectCaptcha.ashx?get=script-include" type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+      BotDetect.Init('c_webform_wfc', '35646336fbcb4f7ea61438c414cd996d', null, true, true, true, true, 1200, 7200, 0, false);
+    //]]>
+    </script>
+    <script type="text/javascript">
+    //<![CDATA[
+      try{(function(){var bdrsn = document.createElement('script'); bdrsn.type = 'text/javascript'; bdrsn.async = true; bdrsn.src = document.location.protocol + '//remote.captcha.com/include.js?i=ATABMAEwATQBMQEwFASPg-V0fKJUsqnB72_IyJ3eZWUzATIBMAEwATEBNAE2ATABMgplbi1MYXRuLVVTAzI1MAI1MA'; var fsn = document.getElementsByTagName('script')[0]; fsn.parentNode.insertBefore(bdrsn, fsn);})();} catch(err){}
+    //]]>
+    </script>
+    <input type="hidden" name="BDC_VCID_c_webform_wfc" id="BDC_VCID_c_webform_wfc" value="35646336fbcb4f7ea61438c414cd996d" />
+    <input type="hidden" name="BDC_BackWorkaround_c_webform_wfc" id="BDC_BackWorkaround_c_webform_wfc" value="0" />
+  </div>
+
+</td>
+	</tr><tr>
+		<td><input name="txtCaptchaCode" type="text" id="txtCaptchaCode" class="uk-input" placeholder="Yukarıdaki resimde yazılan metni giriniz." autocomplete="off" /></td>
+	</tr><tr>
+		<td><span><font color="Red"></font></span></td>
+	</tr><tr>
+		<td><input id="kvkkonay" type="checkbox" name="kvkkonay" /><label for="kvkkonay"><a id='KvkkModalLink' href='#'>”Kişisel Verilerin Korunması ve İşlenmesi Aydınlatma Metni”ni okudum ve kabul ediyorum.</a></label></td>
+	</tr><tr>
+		<td><span class="aspNetDisabled"><input id="emailonay" type="checkbox" name="emailonay" disabled="disabled" /><label for="emailonay"><a id='EmailModalLink' href='#'>Yukarıda belirttiğim iletişim bilgilerime “Kişisel Verilerin İşlenmesi Açık Rıza Metni” kapsamında elektronik ileti gönderimini kabul ediyorum.</a></label></span></td>
+	</tr><tr>
+		<td><input type="button" name="btnButton" value="Kayıt alındı" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" id="btnButton" class="btnButton" /></td>
+	</tr><tr>
+		<td><span id="lblMessage" class="uk-text-normal" style="display:none;"><font color="Red">Kayıt işleminiz başarılı bir şekilde tamamlanmıştır.</font></span></td>
+	</tr>
+</table>
+    </div>
+</form>
+<body>
+    
+</body>
+    <div id="KvkkModal" class="modal">
+        <h5>KİŞİSEL VERİLERİN KORUNMASI VE İŞLENMESİ AYDINLATMA METNİ </h5>
+        <div><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:20.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:20.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:36.0pt 36.0pt 36.0pt 36.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link="#0563C1" vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='line-height:115%;text-autospace:none'><b><span
+lang=EN-US style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>De&#287;erli Mü&#351;terimiz,</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Sem Laboratuar Cihazlar&#305; Pazarlama Sanayi ve
+Ticaret A.&#350; olarak özel hayat&#305;n gizlili&#287;ine sayg&#305; duyuyor
+ve önem veriyoruz. Bu nedenle, sizleri 6698 say&#305;l&#305; Ki&#351;isel
+Verilerin Korunmas&#305; Kanunu (Bundan sonra “KVKK” olarak
+an&#305;lacakt&#305;r.) kapsam&#305;nda ki&#351;isel verilerinizin
+kullan&#305;m&#305; ve korunmas&#305; ile ilgili haklar&#305;n&#305;z konusunda
+bilgilendirmek istiyoruz.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>a)         Veri Sorumlusu </span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Sem Laboratuar Cihazlar&#305; Pazarlama Sanayi ve
+Ticaret A.&#350; (Bundan sonra “&#350;irket” olarak an&#305;lacakt&#305;r.)
+olarak ki&#351;isel verilerinizi, 6698 say&#305;l&#305; Ki&#351;isel Verilerin
+Korunmas&#305; Kanunu ve ilgili sair mevzuat kapsam&#305;nda, veri sorumlusu
+s&#305;fat&#305; ile i&#351;ledi&#287;imizi taraf&#305;n&#305;za bildiriyoruz.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>b)         Ki&#351;isel Verilerin Hangi Amaçla
+&#304;&#351;lenece&#287;i ve Hukuki Sebebi</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Toplanan ki&#351;isel verileriniz, </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Sunulan ürün ve
+hizmetlerden sizleri faydaland&#305;rmak için gerekli
+çal&#305;&#351;malar&#305;n i&#351; birimlerimiz taraf&#305;ndan
+yap&#305;lmas&#305; ve ilgili i&#351; süreçlerinin yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Ürün ve hizmetlerin
+sat&#305;&#351; süreçlerinin planlanmas&#305; ve icras&#305;;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Mü&#351;teri
+ili&#351;kileri yönetimi süreçlerinin planlanmas&#305; ve icras&#305;;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Mü&#351;teri
+memnuniyetine yönelik çal&#305;&#351;malar&#305;n&#305;n yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Sözle&#351;me
+süreçlerinin ve hukuki taleplerin takibi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Sat&#305;&#351;
+sonras&#305; destek hizmetlerinin yürütülmesi; </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>&#350;irket olarak
+hizmet kalitemizin art&#305;r&#305;lmas&#305; </span><span lang=TR
+style='font-family:Helvetica'>için varsa &#351;ikâyet ve önerilerin
+toplanmas&#305; ve de&#287;erlendirilmesi ve bu do&#287;rultuda ileti&#351;im
+faaliyetlerinin gerçekle&#351;tirilmesi,</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Faaliyetlerin
+mevzuata uygun yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Finans ve muhasebe
+süreçlerinin yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Lojistik
+faaliyetlerinin yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Acil durum yönetimi
+süreçlerinin yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Bilgi güvenli&#287;i
+süreçlerinin yürütülmesi;</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span lang=TR
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=TR style='font-family:Helvetica'>Yetkili ki&#351;i,
+kurum ve kurulu&#351;lara bilgi verilmesi</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>amaçlar&#305;yla KVKK’n&#305;n 5 (2) maddesinde
+belirtilen <i>“a) Kanunlarda aç&#305;kça öngörülmesi”</i>, <i>“c) Bir
+sözle&#351;menin kurulmas&#305; veya ifas&#305;yla do&#287;rudan do&#287;ruya
+ilgili olmas&#305; kayd&#305;yla, sözle&#351;menin taraflar&#305;na ait
+ki&#351;isel verilerin i&#351;lenmesinin gerekli olmas&#305;”,</i> <i>“ç) Veri
+sorumlusunun hukuki yükümlülü&#287;ünün yerine getirebilmesi için zorunlu
+olmas&#305;”, “d) &#304;lgili ki&#351;inin kendisi taraf&#305;ndan
+alenile&#351;tirilmi&#351; olmas&#305;.”</i> <i>“e) Bir hakk&#305;n tesisi,
+kullan&#305;lmas&#305; veya korunmas&#305; için veri i&#351;lemenin zorunlu
+olmas&#305;,</i>” “<i>f) &#304;lgili ki&#351;inin temel hak ve özgürlüklerine
+zarar vermemek kayd&#305;yla, veri sorumlusunun me&#351;ru menfaatleri için
+veri i&#351;lenmesinin zorunlu olmas&#305;”</i> hukuki sebepleri dâhilinde
+i&#351;lenecektir.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Kimlik, ileti&#351;im, mesleki deneyim, pazarlama
+ve lokasyon kategorilerindeki ki&#351;isel verileriniz; mü&#351;teri
+memnuniyetinin ölçümlenmesi, ürün ve hizmetlerin pazarlama süreçlerinin
+planlanmas&#305; ve icras&#305;, profilleme ve analiz faaliyetlerinin
+yürütülmesi, sunulan ürün ve hizmetlerin be&#287;eni, kullan&#305;m
+al&#305;&#351;kanl&#305;klar&#305;n&#305;z ve ihtiyaçlar&#305;n&#305;za göre özelle&#351;tirerek
+sizlere önerilmesi ve tan&#305;t&#305;lmas&#305;, kabulünüz kapsam&#305;nda
+payla&#351;m&#305;&#351; oldu&#287;unuz ileti&#351;im bilgilerinize reklam,
+promosyon, vb. ticari elektronik ileti gönderilmesi ve gönderim
+sa&#287;lanmas&#305; için tedarikçilerimiz ve yurt d&#305;&#351;&#305; i&#351;
+ortaklar&#305;m&#305;z ile payla&#351;&#305;lmas&#305; amaçlar&#305;yla
+aç&#305;k r&#305;zan&#305;z kapsam&#305;nda i&#351;lenecektir. </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Kimlik, mesleki deneyim ve ileti&#351;im
+kategorilerindeki verileriniz; distirübütörlük sözle&#351;mesinin ifas&#305;
+kapsam&#305;nda i&#351; faaliyetlerinin yürütülmesi ve denetimi, mü&#351;teri
+memnuniyetine yönelik çal&#305;&#351;malar&#305;n&#305;n yürütülmesi,
+sözle&#351;me süreçlerinin yürütülmesi ve sat&#305;&#351; sonras&#305; destek
+hizmetlerinin yürütülmesi amaçlar&#305;yla aç&#305;k r&#305;zan&#305;za
+istinaden yurt d&#305;&#351;&#305; i&#351; ortaklar&#305;m&#305;z ile
+payla&#351;&#305;lacakt&#305;r.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>c)         Ki&#351;isel Verilerin Toplama Yöntemi
+</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Ki&#351;isel verileriniz, bu metnin (b)
+f&#305;kras&#305;ndaki amaçlar&#305;n yerine getirilebilmesi için KVKK’n&#305;n
+5 (2) ve 6. maddelerinde düzenlenen hukuki sebeplere dayanarak, otomatik veya
+otomatik olmayan yöntemlerle bizzat taraf&#305;n&#305;zdan veya i&#351;
+ortaklar&#305;m&#305;z vas&#305;tas&#305;yla sözlü, yaz&#305;l&#305; veya
+elektronik ortamlarda elde edilecektir. </span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>d)         &#304;&#351;lenen Ki&#351;isel Verilerin
+Kimlere ve Hangi Amaçla Aktar&#305;labilece&#287;i </span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Ki&#351;isel verileriniz, a&#351;a&#287;&#305;da
+belirtilen amaçlar ile KVKK’n&#305;n 8 (2) (a) maddeleri uyar&#305;nca
+aç&#305;k r&#305;zan&#305;z aranmaks&#305;z&#305;n aktar&#305;lacakt&#305;r: </span></p>
+
+<p class=MsoNormal style='margin-left:35.7pt;text-align:justify;text-indent:
+-17.85pt;line-height:115%'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:Helvetica'>Ürün ve hizmetlere
+dair ücretlerin tahsilat&#305; kapsam&#305;nda finans ve/veya muhasebe
+i&#351;lerinin yürütülmesi amac&#305;yla, gerekmesi halinde noter, icra
+daireleri ve/veya mahkemeler ile payla&#351;&#305;labilecektir.</span></p>
+
+<p class=MsoNormal style='margin-left:35.7pt;text-align:justify;text-indent:
+-17.85pt;line-height:115%'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:Helvetica'>&#304;lgili
+mevzuat uyar&#305;nca yasal yükümlülüklerin yerine getirebilmesi amac&#305;yla,
+gerekmesi veya talep gelmesi halinde, ilgili kamu kurum ve
+kurulu&#351;lar&#305; ve yetkili kurumlar ile payla&#351;&#305;labilecektir.</span></p>
+
+<p class=MsoNormal style='margin-left:35.7pt;text-align:justify;text-indent:
+-17.85pt;line-height:115%'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:Helvetica'>Hukuki süreçlerin
+takip edilebilmesi amac&#305;yla avukatlar&#305;m&#305;z ile s&#305;r saklama
+yükümlülü&#287;ü çerçevesinde gerekti&#287;i kadar
+payla&#351;&#305;labilecektir.</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='text-align:justify;line-height:115%'><span
+     lang=EN-US style='font-family:Helvetica'>Denetim sürecinde ilgili
+     ki&#351;isel verileriniz Denetim Firmalar&#305; ile
+     payla&#351;&#305;lacakt&#305;r.</span></li>
+</ul>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>e)         KVKK’n&#305;n 11. Maddesi
+Kapsam&#305;ndaki Haklar&#305;n&#305;z </span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>Ki&#351;isel veri sahibi olarak Kanun’un 11.
+maddesi uyar&#305;nca a&#351;a&#287;&#305;daki haklara sahip oldu&#287;unuzu
+bildiririz: </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Ki&#351;isel verilerinizin
+i&#351;lenip i&#351;lenmedi&#287;ini ö&#287;renme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Ki&#351;isel verileriniz
+i&#351;lenmi&#351;se, buna ili&#351;kin bilgi talep etme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Ki&#351;isel verilerinizin
+i&#351;lenme amac&#305;n&#305; ve ki&#351;isel verilerinizin i&#351;lenme
+amac&#305;na uygun kullan&#305;l&#305;p
+kullan&#305;lmad&#305;&#287;&#305;n&#305; ö&#287;renme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Yurt içinde veya yurt
+d&#305;&#351;&#305;nda ki&#351;isel verilerinizin
+aktar&#305;ld&#305;&#287;&#305; üçüncü ki&#351;ileri bilme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Ki&#351;isel verilerinizin eksik veya
+yanl&#305;&#351; i&#351;lenmi&#351; olmas&#305; halinde bunlar&#305;n
+düzeltilmesini talep etme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           &#304;lgili mevzuatta öngörülen
+&#351;artlar çerçevesinde ki&#351;isel verilerinizin silinmesini veya yok
+edilmesini isteme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           &#304;lgili mevzuat uyar&#305;nca
+yap&#305;lan düzeltme, silme ve yok edilme i&#351;lemlerinin, ki&#351;isel
+verilerinizin payla&#351;&#305;ld&#305;&#287;&#305; üçüncü ki&#351;ilere
+bildirilmesini isteme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           &#304;&#351;lenen ki&#351;isel
+verilerinizin münhas&#305;ran otomatik sistemler vas&#305;tas&#305;yla analiz
+edilmesi suretiyle sizin aleyhinize bir sonucun ortaya ç&#305;kmas&#305;na
+itiraz etme, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Ki&#351;isel verilerinizin kanuna
+ayk&#305;r&#305; olarak i&#351;lenmesi sebebiyle zarara u&#287;raman&#305;z
+halinde, zarar&#305;n giderilmesini talep etmek.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>KVKK’n&#305;n 11. maddesi kapsam&#305;ndaki bu
+haklar&#305;n&#305;z ile ilgili taleplerinizi &#304;lgili Ki&#351;i
+Ba&#351;vuru Formu’nda belirtilen bütün bilgileri doldurmak suretiyle
+KVKK’n&#305;n 11. maddesi ile 13. maddesinin 1. f&#305;kras&#305; ve Veri
+Sorumlusuna Ba&#351;vuru Usul ve Esaslar&#305; Hakk&#305;nda Tebli&#287;
+gere&#287;ince, </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           Barbaros Mah. Temmuz Sok. No:6 34746 Ata&#351;ehir/&#304;stanbul
+adresindeki &#350;irketimize bizzat gelerek,</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           kimli&#287;inizi tespit edebilmek ve
+yanl&#305;&#351; ki&#351;ilere bilgi vermemek ad&#305;na yaz&#305;l&#305;
+olarak noter arac&#305;l&#305;&#287;&#305; ile veya iadeli taahhütlü mektup
+ile,</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•            güvenli elektronik imza, mobil imza
+ya da (varsa) taraf&#305;n&#305;zca daha &#350;irketimize bildirilen ve sistemlerimizde
+kay&#305;tl&#305; bulunan elektronik posta adresini kullanmak suretiyle
+kvkk@sem.com.tr adresine elektronik posta göndererek </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>•           veya gelecekte Kurul’un
+belirleyece&#287;i di&#287;er yöntemlerle iletebilirsiniz. </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>KVKK’n&#305;n 11. maddesinde belirtilen haklara
+ek olarak, ki&#351;isel verilerinizi i&#351;lenmesine dair aç&#305;k r&#305;za
+vermeniz halinde, söz konusu aç&#305;k r&#305;zay&#305; diledi&#287;iniz zaman
+geri alma hakk&#305;n&#305;z bulunmaktad&#305;r.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+style='font-family:Helvetica'>g)         De&#287;i&#351;iklik ve Güncellemeler</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-family:Helvetica'>&#304;&#351; bu ayd&#305;nlatma metni, 6698
+say&#305;l&#305; Ki&#351;isel Verilerin Korunmas&#305; Kanunu ve ilgili sair
+mevzuat kapsam&#305;nda haz&#305;rlanm&#305;&#351;t&#305;r. &#304;lgili yasal
+mevzuat ve/veya &#350;irket’in ki&#351;isel veri i&#351;leme amaç ve
+politikalar&#305;nda meydana gelecek de&#287;i&#351;iklikler do&#287;rultusunda
+bahse konu ayd&#305;nlatma metninde gerekli de&#287;i&#351;iklikler
+yap&#305;labilir. </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Helvetica'>&nbsp;</span></p>
+
+</div>
 
 </body>
-    </html>
+
+</html>
+ </div>
+        <a href="#" rel="modal:close" class="btnButton" id="KvkkModalAccept">Okudum ve Kabul Ediyorum</a>
+    </div>
+    <div id="EmailModal" class="modal">
+        <h5>KİŞİSEL VERİLERİN İŞLENMESİ AÇIK RIZA METNİ</h5>
+        <div><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:20.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:20.0pt;
+	margin-left:36.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:36.0pt 36.0pt 36.0pt 36.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-GB link="#0563C1" vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-family:Helvetica'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:150%'><span
+lang=EN-US style='font-family:Helvetica'>&nbsp;</span></p>
+
+<table class=TabloKlavuzu6 border=0 cellspacing=0 cellpadding=0 align=left
+ width=704 style='width:528.0pt;border-collapse:collapse;border:none;
+ margin-left:4.8pt;margin-right:4.8pt'>
+ <tr style='height:64.3pt'>
+  <td width=704 valign=top style='width:528.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:64.3pt'>
+  <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+  style='font-family:Helvetica'>&nbsp;</span></b></p>
+  <p class=MsoListParagraph style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&#350;irket’e
+  iletti&#287;im ki&#351;isel verimin <u>KVKK Ayd&#305;nlatma Metni </u>kapsam&#305;nda,
+  a&#351;a&#287;&#305;daki amaçlar do&#287;rultusunda i&#351;lenmesine
+  i&#351;bu aç&#305;k r&#305;za metni ile onay veriyorum:</span></p>
+  </td>
+ </tr>
+ <tr style='height:64.3pt'>
+  <td width=704 valign=top style='width:528.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:64.3pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:justify;text-indent:-18.0pt;line-height:150%'><span
+  lang=TR style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=TR style='font-family:Helvetica'>Kimlik,
+  ileti&#351;im, mesleki deneyim, pazarlama ve lokasyon kategorilerindeki
+  ki&#351;isel verilerimin; mü&#351;teri memnuniyetinin ölçümlenmesi, ürün ve
+  hizmetlerin pazarlama süreçlerinin planlanmas&#305; ve icras&#305;,
+  profilleme ve analiz faaliyetlerinin yürütülmesi, sunulan ürün ve hizmetlerin
+  be&#287;eni, kullan&#305;m al&#305;&#351;kanl&#305;klar&#305;ma ve
+  ihtiyaçlar&#305;ma göre özelle&#351;tirerek önerilmesi ve tan&#305;t&#305;lmas&#305;
+  ve payla&#351;m&#305;&#351; oldu&#287;um ileti&#351;im bilgilerinize reklam,
+  promosyon, vb. ticari elektronik ileti gönderilmesi ve gönderim
+  sa&#287;lanmas&#305; için tedarikçiler ve yurt d&#305;&#351;&#305; i&#351;
+  ortaklar&#305; ile payla&#351;&#305;lmas&#305;na</span></p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;margin-bottom:
+  .0001pt;text-align:justify;line-height:150%'><span lang=TR style='font-family:
+  Helvetica'>&nbsp;</span></p>
+  <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
+   style='border-collapse:collapse;border:none;margin-left:-2.25pt;margin-right:
+   -2.25pt'>
+   <tr>
+    <td width=138 valign=top style='width:103.3pt;border:solid windowtext 1.0pt;
+    padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle align=center style='margin-top:12.0pt;
+    margin-right:0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;
+    text-align:center;line-height:150%'><span lang=TR style='font-family:Helvetica'>Evet,
+    onay veriyorum.</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&nbsp;</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;background:#EEECE1;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&nbsp;</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>Hay&#305;r,
+    onay vermiyorum.</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&nbsp;</span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='text-align:justify;line-height:150%'></p>
+  </td>
+ </tr>
+ <tr style='height:64.3pt'>
+  <td width=704 valign=top style='width:528.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:64.3pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:150%'><span
+  lang=EN-US style='font-family:Helvetica'>&nbsp;</span></p>
+  <p class=MsoListParagraphCxSpFirst style='text-align:justify;text-indent:
+  -18.0pt;line-height:150%'><span lang=TR style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span lang=TR style='font-family:Helvetica'>Kimlik, mesleki
+  deneyim ve ileti&#351;im kategorilerindeki verilerimin; distirübütörlük
+  sözle&#351;mesinin ifas&#305; kapsam&#305;nda i&#351; faaliyetlerinin
+  yürütülmesi ve denetimi, sözle&#351;me süreçlerinin yürütülmesi ve
+  sat&#305;&#351; sonras&#305; destek hizmetlerinin yürütülmesi
+  amaçlar&#305;yla yurt d&#305;&#351;&#305; i&#351; ortaklar&#305; ile
+  payla&#351;&#305;lmas&#305;na</span></p>
+  <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 align=left
+   style='border-collapse:collapse;border:none;margin-left:-2.25pt;margin-right:
+   -2.25pt'>
+   <tr>
+    <td width=138 valign=top style='width:103.3pt;border:solid windowtext 1.0pt;
+    padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle align=center style='margin-top:12.0pt;
+    margin-right:0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;
+    text-align:center;line-height:150%'><span lang=TR style='font-family:Helvetica'>Evet,
+    onay veriyorum.</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&nbsp;</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;background:#EEECE1;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&nbsp;</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpMiddle style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>Hay&#305;r,
+    onay vermiyorum.</span></p>
+    </td>
+    <td width=138 valign=top style='width:103.35pt;border:solid windowtext 1.0pt;
+    border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoListParagraphCxSpLast style='margin-top:12.0pt;margin-right:
+    0cm;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:
+    justify;line-height:150%'><span lang=TR style='font-family:Helvetica'>&nbsp;</span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='text-align:justify;line-height:150%'></p>
+  </td>
+ </tr>
+ <tr style='height:64.3pt'>
+  <td width=704 valign=top style='width:528.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:64.3pt'>
+  <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0 align=left
+   style='border-collapse:collapse;border:none;margin-left:-2.25pt;margin-right:
+   -2.25pt'>
+   <tr>
+    <td width=94 valign=top style='width:70.65pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>Ad&#305;-Soyad&#305;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+    <td width=28 valign=top style='width:21.25pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>:</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+    <td width=482 valign=top style='width:361.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+   </tr>
+   <tr>
+    <td width=94 valign=top style='width:70.65pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>Tarih</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+    <td width=28 valign=top style='width:21.25pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>:</span></b></p>
+    </td>
+    <td width=482 valign=top style='width:361.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+   </tr>
+   <tr>
+    <td width=94 valign=top style='width:70.65pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&#304;mza</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+    <td width=28 valign=top style='width:21.25pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>:</span></b></p>
+    </td>
+    <td width=482 valign=top style='width:361.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-align:justify'><b><span lang=EN-US
+    style='font-family:Helvetica'>&nbsp;</span></b></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='text-align:justify;line-height:150%'></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><i><span lang=EN-US
+style='font-family:Helvetica;color:black'> </span></i></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:Helvetica'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+</div>
+        <a href="#" rel="modal:close" class="btnButton" id="EmailModalAccept">Okudum ve Kabul Ediyorum</a>
+    </div>
+</html>
+
+<script src="js/MKVYWebform.js"></script>
